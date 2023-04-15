@@ -8,12 +8,13 @@
   <button onclick="sendDataToReactNativeApp()" style="padding: 20; width: 200; font-size: 20; color: white; background-color: #6751ff; ">
     Login
   </button>
+  <h1 id="tokenText">Expo Token will Appear here</h1>
   <script>
     const sendDataToReactNativeApp = async () => {
       window.ReactNativeWebView.postMessage('login');
     };
     window.addEventListener("message", message => {
-      alert(message.data)
+      document.getElementById("tokenText").innerHTML=message.data;
     });
   </script>
 </body>
